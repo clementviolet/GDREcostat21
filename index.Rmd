@@ -44,7 +44,7 @@ class: middle, title-slide
 <div class="lab-logo"></div>
 <div class="uni-logo"></div>
 
-# Predicting diversity with Joint Species Distribution Models
+# Predicting diversity with *Joint Species Distribution Models*
 
 <hr width="65%" align="left" size="0.3" color="yellow"></hr>
 
@@ -86,7 +86,7 @@ Strategies for modelling a community:
 
 *Assemble and predict together*
 
-.center[![:scale 90%](images/jsdm_schema.png)]
+.center[![:scale 90%](images/JSDM_schema.png)]
 
 ---
 # *Joint Species Distribution Models*
