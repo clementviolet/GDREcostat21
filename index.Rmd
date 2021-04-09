@@ -275,7 +275,6 @@ class: inverse
 
 .citeb[Go et al., In Prep.]
 
-
 ---
 class: inverse
 # Thank you for listening!
@@ -288,6 +287,10 @@ GDREcostat21)
 <br>
 
 [<i class="fa fa-twitter fa-lg" style="color:#e7e8e2"></i> @ClementVIOLET](https://twitter.com/ClementVIOLET)
+
+<br>
+
+[<i class="fa fa-envelope"></i> clement.violet@ifremer.fr](mailto:clement.violet.ifremer)
 
 <br>
 
