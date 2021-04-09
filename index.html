@@ -9,7 +9,7 @@
     <link href="assets/animate.css-3.7.2/animate.xaringan.css" rel="stylesheet" />
     <link href="assets/tachyons-4.12.0/tachyons.min.css" rel="stylesheet" />
     <link href="assets/xaringanExtra-extra-styles-0.2.6/xaringanExtra-extra-styles.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x96f200509e24d2196155e5800f3b35a","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"bfcd3c4a2ae0414583ed7b39a2c9813c","expires":1}</script>
     <script src="assets/himalaya-1.1.0/himalaya.js"></script>
     <script src="assets/js-cookie-3.0.0/js.cookie.js"></script>
     <link href="assets/editable-0.2.6/editable.css" rel="stylesheet" />
@@ -84,10 +84,6 @@ Strategies for modelling a community:
 
 .center[![:scale 95%](images/jsdm1.png)]
 
-???
-
-Pour prendre en compte l'influence et l'interdépendance entre chaque espèce une première solution est d'estimer la matrice de variance-covariance à partir d'un effet aléatoire. Mais estimer entièrement cette matrice est rapidement difficile, car le nombre de paramètres à estimer croit au carré avec le nombre d'espèces.
-
 ---
 # *Joint Species Distribution Models*
 
@@ -98,9 +94,10 @@ Pour prendre en compte l'influence et l'interdépendance entre chaque espèce un
 ---
 # Prediction accuracy &amp; species interactions
 
-- *JSDM* predict the occurence of species more accuratly than SDM
+- *JSDM* can predict species occurence more accuratly than SDM
 
-  - But predict interactions is at best difficult from co-occurence data.
+- Predicting interactions from co-occurence data is limited
+
 .citeb[Norberg et al., [2019](https://doi.org/10.1002/ecm.1370) Ecological Monographs ; Blanchet, Cazelles and Gravel [2020](https://doi.org/10.1111/ele.13525) Ecol. Lett.]
 
 - Using abundance data could be a solution to infer species interactions
@@ -109,7 +106,7 @@ Pour prendre en compte l'influence et l'interdépendance entre chaque espèce un
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-.center[**Before trying to infer interactions, are we predicting accurately a community of interest?**]
+.center[**Before using them to infer interactions, can JSDM accurately predict community composition and diversity patterns?**]
 
 ---
 class: middle, center, inverse
@@ -132,7 +129,7 @@ December 1999...
 .center[![:scale 60%](images/rebent.jpeg)]
 
 ---
-# Study Case - Habitat
+# Case study - Habitat
 
 - 21 training sites + 2 holdout validation sites
 - 9 years of sampling (2006 - 2014)
@@ -146,7 +143,7 @@ December 1999...
 .font80[Mont Saint-Michel, intertidal bare sediments]]]
 
 ---
-# Study Case - Community
+# Case study - Community
 
 Polychaeta
 
@@ -157,7 +154,7 @@ Polychaeta
 # Model backbone
 - *Hierarchical Modelling of Species Communities* (*HMSC*)
 - Multivariate hierachical GLMM fitted with Bayesian inference
-- *HMSC* relies on assembly rules framework
+- *HMSC* framework relies on assembly rules framework
 
 .center[![:scale 64%](images/hmsc5.png)]
 
@@ -264,7 +261,6 @@ class: inverse
 
 .citeb[Go et al., In Prep.]
 
-
 ---
 class: inverse
 # Thank you for listening!
@@ -277,6 +273,10 @@ GDREcostat21)
 &lt;br&gt;
 
 [&lt;i class="fa fa-twitter fa-lg" style="color:#e7e8e2"&gt;&lt;/i&gt; @ClementVIOLET](https://twitter.com/ClementVIOLET)
+
+&lt;br&gt;
+
+[&lt;i class="fa fa-envelope"&gt;&lt;/i&gt; clement.violet@ifremer.fr](mailto:clement.violet.ifremer)
 
 &lt;br&gt;
 
