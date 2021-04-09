@@ -161,7 +161,7 @@ December 1999...
 
 Polychaeta
 
-.center[![:scale 80%](images/BobbitWorm.gif)<br>.font80[*Eunice vittata*, which ~~unfortunately~~ does not inhabit our shores...]]
+.center[![:scale 80%](images/BobbitWorm.gif)<br>.font80[*Eunice aphroditois*, which ~~unfortunately~~ does not inhabit our shores...]]
 .citeb[[spotmydive.com](https://www.spotmydive.com/en/marine-life/bobbitt-worm-evil-has-a-new-name)]
 
 ---
