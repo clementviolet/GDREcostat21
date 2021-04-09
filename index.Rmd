@@ -274,3 +274,29 @@ class: inverse
 ![:scale 100%](images/trident_schema.png)
 
 .citeb[Go et al., In Prep.]
+
+
+---
+class: inverse
+# Thank you for listening!
+
+.pull-left[
+<br> 
+[<i class="fa fa-github fa-lg" style="color:#e7e8e2"></i> clementviolet/GDREcostat21](https://github.com/clementviolet/
+GDREcostat21)
+
+<br>
+
+[<i class="fa fa-twitter fa-lg" style="color:#e7e8e2"></i> @ClementVIOLET](https://twitter.com/ClementVIOLET)
+
+<br>
+
+[<i class="ai ai-orcid ai-lg" style="color:#e7e8e2"></i> 0000-0001-6217-5891](https://orcid.org/0000-0001-6217-5891)
+]
+
+
+.pull-right[
+![:scale 100%](images/Eunice_aphroditois.jpg)
+
+.center[*Eunice aphroditois a.k.a Bobbit worm*]
+]
