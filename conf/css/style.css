@@ -168,6 +168,10 @@ a {
   width: 100%;
 }
 
+.inverse a {
+  color: #FFFFFF;
+}
+
 /* Column */
   .pull-left {
     float: left;
