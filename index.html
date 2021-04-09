@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Talk template</title>
+    <title>GdR Ecostat 2021</title>
     <meta charset="utf-8" />
     <link href="assets/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="assets/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
@@ -9,22 +9,13 @@
     <link href="assets/animate.css-3.7.2/animate.xaringan.css" rel="stylesheet" />
     <link href="assets/tachyons-4.12.0/tachyons.min.css" rel="stylesheet" />
     <link href="assets/xaringanExtra-extra-styles-0.2.6/xaringanExtra-extra-styles.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"ed4e541691924d0fb157d36494345ff4","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xbd19dfbbb4b410bb365318834d32d53","expires":1}</script>
     <script src="assets/himalaya-1.1.0/himalaya.js"></script>
     <script src="assets/js-cookie-3.0.0/js.cookie.js"></script>
     <link href="assets/editable-0.2.6/editable.css" rel="stylesheet" />
     <script src="assets/editable-0.2.6/editable.js"></script>
     <link href="assets/panelset-0.2.6/panelset.css" rel="stylesheet" />
     <script src="assets/panelset-0.2.6/panelset.js"></script>
-    <script src="assets/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-    <script src="assets/jquery-3.5.1/jquery.min.js"></script>
-    <link href="assets/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-    <script src="assets/datatables-binding-0.17/datatables.js"></script>
-    <link href="assets/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <link href="assets/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
-    <script src="assets/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-    <link href="assets/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
-    <script src="assets/crosstalk-1.1.1/js/crosstalk.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/v4-shims.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
@@ -42,534 +33,236 @@ class: middle, title-slide
 &lt;div class="lab-logo"&gt;&lt;/div&gt;
 &lt;div class="uni-logo"&gt;&lt;/div&gt;
 
-# Title of my talk template
+# Predicting diversity with *Joint Species Distribution Models*
 
 &lt;hr width="65%" align="left" size="0.3" color="yellow"&gt;&lt;/hr&gt;
 
-## My talk subtitle
+## A difficult case with species rich marine benthic communities
 
-### &lt;b&gt;Clément Violet&lt;/b&gt;, .small[DYNECO - LEBCO &lt;br&gt; + Collaborators]
+### &lt;b&gt;Clément Violet&lt;/b&gt;, .small[DYNECO - LEBCO] &lt;br&gt;&lt;b&gt;Aurélien Boyé&lt;/b&gt;, .small[DYNECO - LEBCO]&lt;br&gt;&lt;b&gt;Olivier Gauthier&lt;/b&gt;, .small[LEMAR]&lt;br&gt;&lt;b&gt;Jacques Grall&lt;/b&gt;, .small[IUEM - Observatoire]&lt;br&gt;&lt;b&gt;Stanislas Dubois&lt;/b&gt;, .small[DYNECO - LEBCO]&lt;br&gt;&lt;b&gt;Martin Marzloff&lt;/b&gt;, .small[DYNECO - LEBCO]
+
+.date[09/04/2021]
+
+---
+class: middle, center, inverse
+
+# Introduction
+&lt;hr width="100%" align="left" size="0.3" color="yellow"&gt;&lt;/hr&gt;
+---
+# Assembly Rules Framework
+
+.center[![:scale 90%](images/assembly_rules_framework1.png)]
+.citeb[Ovaskainen et al. [2017](https://doi.org/10.1111/ele.12757), Ecol. Lett.]
+
+---
+# Assembly Rules Framework
+
+.center[![:scale 90%](images/assembly_rules_framework2.png)]
+.citeb[Ovaskainen et al. [2017](https://doi.org/10.1111/ele.12757), Ecol. Lett.]
+
+---
+# *Species Distribution Models*
+
+Strategies for modelling a community:
+
+.citeb[Ferrier and Guisan [2006](https://doi.org/10.1111/j.1365-2664.2006.01149.x), J. Appl. Ecol.]
+
+*Predict first, assemble later*
+
+.center[![:scale 90%](images/sdm_schema.png)]
+
+--
+
+*Assemble and predict together*
+
+.center[![:scale 90%](images/JSDM_schema.png)]
+
+---
+# *Joint Species Distribution Models*
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+.center[![:scale 95%](images/jsdm1.png)]
+
+???
+
+Pour prendre en compte l'influence et l'interdépendance entre chaque espèce une première solution est d'estimer la matrice de variance-covariance à partir d'un effet aléatoire. Mais estimer entièrement cette matrice est rapidement difficile, car le nombre de paramètres à estimer croit au carré avec le nombre d'espèces.
+
+---
+# *Joint Species Distribution Models*
+
+.center[![:scale 95%](images/jsdm2.png)]
+
+.citeb[Warton et al., [2015](https://doi.org/10.1016/j.tree.2015.09.007) Trends Ecol. Evol.]
+
+---
+# Prediction accuracy &amp; species interactions
+
+- *JSDM* predict the occurence of species more accuratly than SDM
+
+  - But predict interactions is at best difficult from co-occurence data.
+.citeb[Norberg et al., [2019](https://doi.org/10.1002/ecm.1370) Ecological Monographs ; Blanchet, Cazelles and Gravel [2020](https://doi.org/10.1111/ele.13525) Ecol. Lett.]
+
+- Using abundance data could be a solution to infer species interactions
+
+--
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-[&lt;i class="fa fa-github fa-lg" style="color:#e7e8e2"&gt;&lt;/i&gt; clementviolet/talkTemplate](https://github.com/clementviolet/talkTemplate)
-
-[&lt;i class="fa fa-twitter fa-lg" style="color:#e7e8e2"&gt;&lt;/i&gt; @ClementVIOLET](https://twitter.com/ClementVIOLET)
-
-[&lt;i class="ai ai-orcid ai-lg" style="color:#e7e8e2"&gt;&lt;/i&gt; 0000-0001-6217-5891](https://orcid.org/0000-0001-6217-5891)
-
-.date[25/05/2021]
-
----
-
-# Introduction
-
-- How to setup
-- Content
-- `xaringanExtra` extensions
-- JS libraries
+.center[**Before trying to infer interactions, are we predicting accurately a community of interest?**]
 
 ---
 class: middle, center, inverse
 
-# How to use it?
+# Material &amp; methods
 &lt;hr width="100%" align="left" size="0.3" color="yellow"&gt;&lt;/hr&gt;
-
 ---
-# Workflow
 
-It is recomended to install all (R packages 📦) dependencies:
+# Study Case
+December 1999...
 
-```make
-make install
-```
-.font90[If you use other R packages for your presentation, add them to the `requeriments.yml` file]
+.pull-left[![:scale 100%](images/erika_sinking.jpg)]
 
-&lt;br&gt;
-
-Once dependencies are solved, you can server your presentation on local to be automatically updated while editing:
-
-```make
-make server
-```
-
-Finally, publish your final `html` presentation with:
-
-```make
-make
-```
-
----
-class: middle, center, inverse
-
-# Content
-&lt;hr width="100%" align="left" size="0.3" color="yellow"&gt;&lt;/hr&gt;
-
----
-# Sections
-
-Slides are separeted by `---`:
-
-.code70[
-
-```markdown
----
-# My slide title
-
-Content here
-
----
-```
-]
-
-Title sections, like the previous slide, needs to specify the following classes:
-
-.code70[
-```markdown
----
-class: middle, center, inverse
-
-# Title of my section
-&lt;hr width="100%" align="left" size="0.3" color="yellow"&gt;&lt;/hr&gt;
-
----
-```
-]
-
-.font80[
-You can use one of these classes in any slide if you want to:
-- Vertical center the content (`middle`)
-- Horizontal center the content (`center`)
-- Or inverse the background and text colours (`inverse`)
-]
-
----
-# Tables
-
-.pull-left[
-You can simply insert a markdown table:
-
-.font70[
-| Tables   |      Are      |  Cool |
-|----------|:-------------:|------:|
-| col 1 is |  left-aligned | $1600 |
-| col 2 is |    centered   |   $12 |
-| col 3 is | right-aligned |    $1 |
-]]
-
-.pull-right[
-Or you can use the `DT` R package for dynamic tables:
-
-.font70[
-
-```r
-DT::datatable(head(cars))
-```
-
-<div id="htmlwidget-e53a1c738c3e9d11c8f4" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e53a1c738c3e9d11c8f4">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[4,4,7,7,8,9],[2,10,4,22,16,10]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>speed<\/th>\n      <th>dist<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-]]
-
----
-# Figures
-
-Insert an image:
-
-```md
-![](images/model1.svg)
-```
-.center[
-  ![:scale 70%](images/model1.svg)
-]
-
----
-# Figures
-
-Scale the size of an image:
-
-```md
-![:scale 60%](images/model1.svg)
-```
-.center[
-  ![:scale 40%](images/model1.svg)
-]
-
----
-# Figures
-
-Or simply code it:
-
-
-```r
-plot(cars$speed, cars$dist)
-```
-
-&lt;img src="index_files/figure-html/unnamed-chunk-3-1.png" width="504" style="display: block; margin: auto;" /&gt;
-
----
-# Figures
-
-Use the code chunck options to change the size of a plot :
-
-
-````
-```{r, fig.width = 4, fig.height = 2.5}
-plot(cars$speed, cars$dist)
-```
-````
-
-&lt;img src="index_files/figure-html/unnamed-chunk-5-1.png" width="288" style="display: block; margin: auto;" /&gt;
-
-.font90[
-  *You can check a full list of chunck options [here](https://yihui.org/knitr/options/)*
-]
-
----
-# Columns
-
-50/50 columns can be created with:
-
-.code90[
-
-```markdown
-.pull-left[
-  Content 1
-]
-.pull-right[
-  content 2
-]
-```
-
-.pull-left[
-For left larger columns:
-
-```markdown
-.pull-left1[
-  Content 1
-]
-.pull-right1[
-  content 2
-]
-```
-]
-.pull-right[
-Or right larger columns:
-
-```markdown
-.pull-left2[
-  Content 1
-]
-.pull-right2[
-  content 2
-]
-```
-]
-]
-
----
-# Text position
-
-Instead of using columns, you can define the content position with:
-
-
-.left[
-Left aligned
-
-```markdown
-.left[text here]
-```
-]
-
-.center[
-Center aligned
-
-```markdown
-.left[text here]
-```
-]
-
-.right[
-Right aligned
-
-```markdown
-.left[text here]
-```
-]
-
----
-# Text size
-
-And also text size:
-
-
-```markdown
-.fontX[
-  Content here
-]
-```
-
-Where `X` can be anything between `10` (.font10[very small]) and `200` (.font200[HUGE]) by an increent of `10`:
-
-.code70[
-
-```r
-print(seq(10, 200, 10))
-#  [1]  10  20  30  40  50  60  70  80  90 100 110 120 130 140 150 160 170 180 190
-# [20] 200
-```
-]
-
----
-# Animation
-
-Using `--` between lines
+.pull-right[![:scale 100%](images/erika_pollution.jpg)]
 
 --
-- you
-
---
-- can
-
---
-- animate
-
----
-# Math
-
-`\(\LaTeX\)` math expressions can be writen between `$$`:
-
-
-```markdown
-$$
-  \bar{X}=\frac{1}{n}\sum_{i=1}^nX_i
-$$
-```
-
-
-$$
-  \bar{X}=\frac{1}{n}\sum_{i=1}^nX_i
-$$
-
-
----
-# Citation
-
-This macro is just to easily insert text on the bottom of the slide:
-
-.code70[
-
-```markdown
-.citeb[Talluto et al. [2017](https://link) Nat. Ecol. Evol.]
-```
-]
-
-.center[![:scale 70%](images/Talluto1.png)]
-
-.citeb[Talluto et al. [2017](https://www.nature.com/articles/s41559-017-0182) Nat. Ecol. Evol.]
-
----
-# Citation
-
-Or you can aad a citation at the bottom of an object (i.e: code block, text, citation.)
-
-.code70[
-
-```markdown
-.citeh[Talluto et al. [2017](https://link) Nat. Ecol. Evol.]
-```
-]
-
-.citeh[Talluto et al. [2017](https://www.nature.com/articles/s41559-017-0182) Nat. Ecol. Evol.]
-
 &lt;br&gt;&lt;br&gt;
-.center[![:scale 70%](images/Talluto1.png)]
+...2003
+
+.center[![:scale 60%](images/rebent.jpeg)]
 
 ---
-# Icons
+# Study Case - Habitat
 
-You can use both [Font awesome](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/) icons
+- 21 training sites + 2 holdout validation sites
+- 9 years of sampling (2006 - 2014)
+- 2 habitats (seagrass meadows / intertidal bare sediments)
+
+.pull-left[.center[
+![](images/Eelgrass.jpg)
+.font80[*Zostera marina*, seagrass meadow]]]
+.pull-right[.center[
+![](images/Mont-Saint-Michel_Drone.jpg)
+.font80[Mont Saint-Michel, intertidal bare sediments]]]
+
+---
+# Study Case - Community
+
+Polychaeta
+
+.center[![:scale 80%](images/BobbitWorm.gif)&lt;br&gt;.font80[*Eunice vittata*, which ~~unfortunately~~ does not inhabit our shores...]]
+.citeb[[spotmydive.com](https://www.spotmydive.com/en/marine-life/bobbitt-worm-evil-has-a-new-name)]
+
+---
+# Model backbone
+- *Hierarchical Modelling of Species Communities* (*HMSC*)
+- Multivariate hierachical GLMM fitted with Bayesian inference
+- *HMSC* relies on assembly rules framework
+
+.center[![:scale 64%](images/hmsc5.png)]
+
+---
+# Candidate Models
+
+![:scale 60%](images/candidat_model1.png)
+
+![:scale 70%](images/candidat_model2.png)
+
+![:scale 90%](images/candidat_model3.png)
+
+---
+# Diversity patterns
+
+What is the best strategy to predict:
 
 .pull-left[
-Font awesome icons (`faic`)
+1. Community structure?
 
+2. Species richness?
 
-```markdown
-![:faic](pagelines)
-```
-![:faic](pagelines) 
+3. Species-specific abundance
+
 ]
+
 .pull-right[
-Academic icons (`acid`)
-
-
-```markdown
-![:acic](orcid)
-```
-![:acic](orcid)
-]
-
-&lt;br&gt;
-You can also ajust their size with the following argument:
-
-
-```markdown
-![:faic 2](pagelines)
-```
-![:faic 2](pagelines) 
-
----
-class: middle, center, inverse
-
-# 📦 `{xaringanExtra}`
-&lt;hr width="100%" align="left" size="0.3" color="yellow"&gt;&lt;/hr&gt;
-
----
-# `{xaringanExtra}`
-
-This awesome R package provides enhancements for xaringan such as
-
-&gt; - Add an overview of your presentation with tile view
-&gt; - Make your slides editable
-&gt; - Announce slide changes with a subtle tone
-&gt; - Animate slide transitions with animate.css
-&gt; - Add tabbed panels to slides with panelset
-&gt; - Add a logo to all of your slides with logo
-&gt; - Use the Tachyons CSS utility toolkit
-&gt; - Add a live video feed of your webcam
-&gt; - Fit your slides to fill the browser window
-&gt; - Add extra CSS styles
-
-Take a look in their full documentation [here](https://pkg.garrickadenbuie.com/xaringanExtra/#/)
-
-I added some examples in the following slides...
-
----
-# `{xaringanExtra}` tile view
-
-Press the letter "o" 😲
-
----
-# `{xaringanExtra}` Editable slides
-
-Just use the following class:
-
-
-```markdown
-.can-edit[ ... ]
-```
-
-What do you think?
-
-.can-edit[
-  -
-]
-
----
-# `{xaringanExtra}` Panelset
-
-.panelset[
-.panel[.panel-name[Code]
-
-```r
-x = rnorm(100, 10, 4)
-y = rnorm(100, 2, 1)
-```
-]
-
-.panel[.panel-name[Plot]
-
-```r
-plot(x, y)
-```
-
-&lt;img src="index_files/figure-html/unnamed-chunk-22-1.png" width="504" style="display: block; margin: auto;" /&gt;
-]
-
-.panel[.panel-name[How?]
-
-```markdown
-.panelset[
-  
-  .panel[.panel-name[Code]
-    ...
-  ]
-
-  .panel[.panel-name[Plot]
-    ...
-  ]
-]
-```
-]
-]
-
-
----
-class: middle, center, inverse
-
-# ![:faic](js) libraries
-&lt;hr width="100%" align="left" size="0.3" color="yellow"&gt;&lt;/hr&gt;
-
-
----
-# `Gifffer`
-
-&gt; [Gifffer](https://github.com/krasimir/gifffer) prevents the autoplaying of the animated Gifs
-
-Instead of adding a gif with the same syntax of an image (which plays automatically), you can use the `giffer` JS macro:
-
-
-```markdown
-![:giffer 80%](images/RCP6_enrich.gif)
-```
-
-Where `80%` is the width of the gif
-
 .center[
-  ![:giffer 80%](https://github.com/willvieira/talk_STM-BScUdeS/raw/master/images/RCP6_enrich.gif)
+![:scale 60%](images/scale_predictions.png)
+]
+]
+---
+
+# Diversity patterns
+
+.pull-left[
+What is the best strategy to predict:
+1. Community structure? .citeb[[1] De Cáceres and Legendre [2013](https://doi.org/10.1111/ele.12141), Ecol. Let.]
+
+  - Mean Absolute Error on Local Contribution to Beta Diversity (LCBD) .font60[[1]]
+
+2. Species richness?
+
+  - Mean Absolute Error on species richness
+
+3. Species-specific abundance
+
+  - `\(R^2 = r_p(y, \hat{y})\)`
+]
+
+.pull-right[
+.center[
+![:scale 60%](images/scale_predictions.png)]
 ]
 
 ---
-# More ressources
+# Predict Community Structure
 
-You can check the `xaringan` presentation (which this template relies on):
+.font60[Local Contribution to Beta Diversity]
 
-https://slides.yihui.org/xaringan/#1
+![:scale 85%](images/beta_div.png)
 
-And also check all remark.js fonctionalities available in this template:
+---
+# Predict Species Richness
 
-https://remarkjs.com/#1
+![:scale 90%](images/richness_sites_hab.png)
 
+---
+# Species-specific abundance accuracy
+
+![:scale 90%](images/fitted_vs_observed.png)
+
+---
+
+# Conclusion
+
+![:scale 50%](images/model_summary.png)
+
+![:scale 100%](images/summary.png)
+
+--
+Which strategy to choose?
+- Best accuracy with the whole community
+
+--
+
+- Traits are a valuable addition
+
+--
+
+- Interactions ?
 
 ---
 class: inverse
+# Work in Progress
 
-# Key message here
+- Community trajectory analysis
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+- Add intercept models
 
-**Special thanks to**
+--
 
-Nice people
+![:scale 100%](images/trident_schema.png)
 
-&lt;!--
-.pull-left1[
-&lt;br&gt;
-
-# Key message here
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-**Special thanks to**
-
-Nice people
-
-]
-
-.pull-right1[
-&lt;br&gt;
-![:scale 90%](conf/images/logo.png)
-]
---&gt;
+.citeb[Go et al., In Prep.]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
